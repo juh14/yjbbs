@@ -358,7 +358,7 @@ font-weight: bold;
 				
 				
 				<a href="userUpdate.jsp" class="btn btn-primary pull-right">정보 수정</a>
-				<a href="userDelete.jsp" class="btn btn-primary pull-right">회원 탈퇴</a>
+				<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="userDeleteAction.jsp" class ="btn btn-primary pull-right">회원 탈퇴</a>
 				
 		
 			</div>
