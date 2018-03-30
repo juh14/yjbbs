@@ -119,11 +119,11 @@ public class userDAO {
 	}
 
 	// 삭제하는 메소드 - 훈
-	public int delete(userDTO user) {
+	public int delete(String userID) {
 		String SQL = "DELETE FROM user WHERE userID=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, user.getUserID());
+			pstmt.setString(1, userID);
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
