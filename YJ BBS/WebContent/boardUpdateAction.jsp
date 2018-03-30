@@ -73,7 +73,7 @@
  			PrintWriter script = response.getWriter();
  			script.println("<script>");
  			script.println("alert('입력안된 사항이 있습니다..');");
- 			script.println("history.back()'"); 
+ 			script.println("history.back()"); 
  			script.println("</script>");
  		}
  		
@@ -85,7 +85,7 @@
  						PrintWriter script = response.getWriter();
  						script.println("<script>");
  						script.println("alert('글수정에 실패했습니다');");
- 						script.println("history.back()'"); 
+ 						script.println("history.back()"); 
  						script.println("</script>");
  					} 
  					else{
