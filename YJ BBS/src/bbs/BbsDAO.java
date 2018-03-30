@@ -137,7 +137,7 @@ public class BbsDAO {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL); // 실행준비단계
 			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
-			rs= pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				return true;
 			}
@@ -200,6 +200,18 @@ public class BbsDAO {
 			e.printStackTrace();
 		}
 		return -1;
+	}
+
+	public int deleteAll(String userID) {
+		String SQL = "DELETE FROM bbs WHERE userID=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // 삭제 실패
 	}
 
 	public int setAnonymousUser(int bbsID) {
