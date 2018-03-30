@@ -133,16 +133,14 @@ public class BbsDAO {
 
 	// 10페이지 단위 특정한페이지존재하는지 물어보는함수
 	public boolean nextPage(int pageNumber) {
-		String SQL = "SELECT * FROM BBS WHERE bbsID < ? AND bbsAvailable =1 ORDER BY bbsID DESC LIMIT 10";
-		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		String SQL = "SELECT * FROM BBS WHERE bbsID < ? AND bbsAvailable =1 ";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL); // 실행준비단계
 			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			rs= pstmt.executeQuery();
 			if (rs.next()) {
 				return true;
-
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -203,7 +201,7 @@ public class BbsDAO {
 		}
 		return -1;
 	}
-	// 익명이면 0 비익명이면 1, bbsAnonymous 콜롬 추가
+
 	public int setAnonymousUser(int bbsID) {
 		String SQL = "UPDATE bbs SET bbsAnonymous=? where bbsID=?";
 		try {
