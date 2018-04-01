@@ -252,10 +252,10 @@ font-weight: bold;
         <li class="topMenuLi">
       <a class = "menuLink" href="#">학교정보</a>
 	      <ul class="submenu">
-	       <li><a class = "submenuLink" href="#">학교정보 </a></li>
-	       <li><a class = "submenuLink" href="#">오시는길</a></li>
-	       <li><a class = "submenuLink" href="#">영진정보</a></li>
-	       <li><a class = "submenuLink" href="#">영진신문</a></li>
+	       <li><a class = "submenuLink" href="yjcInformation.jsp">학교정보 </a></li>
+	       <li><a class = "submenuLink" href="load.jsp">오시는길</a></li>
+	       <li><a class = "submenuLink" href="organization.jsp">대학기관</a></li>
+	       <li><a class = "submenuLink" href="#">학생회소식</a></li>
       	  </ul>   
       </li>
       
