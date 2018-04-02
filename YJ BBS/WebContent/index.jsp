@@ -358,31 +358,29 @@ font-weight: bold;
 	
 	<!-- 서브2 영진대전  -->
 	<div style="float:left; width:230px; height:120px; border:1px solid #ccc">
-		 <a href="#">
+		 <a href="https://www.facebook.com/%EC%98%81%EC%A7%84%EC%A0%84%EB%AC%B8%EB%8C%80%ED%95%99-%EB%8C%80%EC%8B%A0-%EC%A0%84%ED%95%B4%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4-370654966442058/">
 						<img id="aa" src="C:/facebook.jpg";>
 					</a>
 	</div>
 	
 	<div style="float:left; width:230px; height:120px; border:1px solid #ccc">
-		 <a href="#">
+		 <a href="http://cafe.naver.com/ystory4u">
 						<img id="aa" src="C:/ystory.jpg";>
 					</a>
 	</div>
 	
 	
 	<div style="float:left; width:230px; height:120px; border:1px solid #ccc">
-		 <a href="#">
+		 <a href="https://www.yjc.ac.kr/">
 						<img id="aa" src="C:/yjp.jpg";>
 					</a>
 	</div>
 	
 		<div style="float:left; width:230px; height:120px; border:1px solid #ccc">
-		 <a href="#">
+		 <a href="https://everytime.kr/259583">
 						<img id="aa" src="C:/everytime.jpg";>
 					</a>
 	</div>
-	
-	
 	
 <!--  로그인창  -->
 
