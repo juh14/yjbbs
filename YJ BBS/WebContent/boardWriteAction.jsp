@@ -25,21 +25,21 @@
 </head>
 <body>
 
-	<%					// radiovalue 있는 부분 다 추가
+	<%
 		String userID = null;
-
+		int number=3;
+		String radiovalue = request.getParameter("radiovalue");
+		
 		if (session.getAttribute("userID") != null) {
 
 			userID = (String) session.getAttribute("userID");
 
 		}
-		
-		String radiovalue = null; 
 
-		if (request.getParameter("radiovalue") != null) {
-			radiovalue = request.getParameter("radiovalue");
-		}
-		radiovalue = (String) request.getParameter("radiovalue");
+
+
+			
+			
 
 		if (userID == null) {
 			PrintWriter script = response.getWriter();
@@ -55,25 +55,32 @@
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('입력안된 사항이 있습니다..');");
-				script.println("history.back()");
+				script.println("history.back()'");
 				script.println("</script>");
 			}
 
 			else {
 				BbsDAO bbsDAO = new BbsDAO();
+				
+			if (radiovalue.equals("a"))
+				number=0;
+			if (radiovalue.equals("u"))
+				number=1;
 
-				int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
+				
+				
+				int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent(),number);
 
-				if (radiovalue.equals("a"))
+			/* 	if (radiovalue.equals("a"))
 					bbsDAO.setAnonymousUser(bbsDAO.CheckBbsNum());
-				else
-					bbsDAO.unsetAnonymousUser(bbsDAO.CheckBbsNum());
+				if (radiovalue.equals("u"))
+					bbsDAO.unsetAnonymousUser(bbsDAO.CheckBbsNum());  */
 
 				if (result == -1) {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("alert('글쓰기에 실패했습니다');");
-					script.println("history.back()");
+					script.println("history.back()'");
 					script.println("</script>");
 				} else {
 					PrintWriter script = response.getWriter();
