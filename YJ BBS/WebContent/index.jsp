@@ -474,6 +474,46 @@ font-weight: bold;
 	
 	</div>
 	
+	<br><br><br><br><br><br>
+<!-- 1번쨰 섹션 -->
+	<div style="width:455px; height:300px; border:1px solid black; float:left; margin-top: 10px; margin-right:10px;"><a class="link" href="board.jsp">자유게시판</a><br>
+	<div style="width:30px; height:30px; "></div>
+	<%
+	int pageNumber=1;
+	if(request.getParameter("pageNumber")!=null)
+	{
+		pageNumber=Integer.parseInt(request.getParameter("pageNumber"));
+	}
+
+	%>
+			<%		
+			BbsDAO bbsDAO = new BbsDAO();
+			ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+			for (int i=0; i < list.size(); i++){
+			%>
+				<tr>
+				<td><%= list.get(i).getBbsDate().substring(0,11)%></td>
+				<td><a href="view.jsp?bbsID=<%= list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle() %><br></a></td>
+				</tr>
+				<%
+				}
+				%>
+		</div>
+<!-- 2번쨰 섹션 -->
+<div style="width:455px; height:300px; border:1px solid green; float:left; margin-top:10px; margin-right:10px;">
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- 3번쨰 섹션 -->	
+<div style="width:455px; height:300px; border:1px solid red; float:left; margin-top: 5px; margin-right:10px;">
+
+</div>
+
+<!-- 4번쨰 섹션 -->
+<div style="width:455px; height:300px; border:1px solid green; float:left; margin-top:5px; margin-right:10px;">
+
+</div>
 
 
 
